@@ -13,6 +13,7 @@ RUN \
     pip3 install pandas && \
     pip3 install matplotlib && \
     pip3 install pyspark && \
+    pip3 install jupyter && \
     pip3 install jupyterlab && \
     pip3 install tensorflow && \
     pip3 install kaggle
@@ -31,6 +32,6 @@ RUN kaggle datasets download -d allen-institute-for-ai/CORD-19-research-challeng
 
 WORKDIR /root
 
-EXPOSE 8080 4040
+COPY ./src /root/src
 
 CMD ["bash"]
